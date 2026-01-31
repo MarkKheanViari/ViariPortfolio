@@ -4,13 +4,15 @@
   --primary: #323b4c;
 }
 
-html {
+/* Lenis handles smooth scroll when active; native smooth as fallback */
+html:not(.lenis) {
   scroll-behavior: smooth;
 }
 
 body {
   letter-spacing: -0.01em;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
