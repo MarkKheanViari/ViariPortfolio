@@ -68,11 +68,11 @@ export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section ref={sectionRef} id="skills" className="py-32 bg-white">
+    <section ref={sectionRef} id="skills" className="py-32 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal direction="right">
           <div className="mb-16">
-            <span className="text-sm font-medium text-[#323b4c]/60 uppercase tracking-widest">
+            <span className="text-sm font-medium text-[#323b4c]/60 dark:text-gray-400 uppercase tracking-widest">
               What I Do
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mt-2">
@@ -91,22 +91,22 @@ export default function Skills() {
               <Reveal key={group.title} direction={direction} delay={index * 0.05}>
                 <div
                   className={`
-                    group relative bg-white rounded-2xl p-8 h-full flex flex-col
-                    border border-black/5 shadow-sm
+                    group relative bg-white dark:bg-gray-800 rounded-2xl p-8 h-full flex flex-col
+                    border border-black/5 dark:border-white/5 shadow-sm
                     transition-all duration-300 ease-out
-                    hover:shadow-xl hover:shadow-[#323b4c]/8 hover:-translate-y-2
-                    hover:border-[#323b4c]/10
+                    hover:shadow-xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-500/5 hover:-translate-y-2
+                    hover:border-indigo-500/20
                     ${isLastInOddRow ? "lg:col-start-2" : ""}
                   `}
                 >
-                  <div className="absolute top-6 left-6 w-10 h-10 rounded-xl bg-[#323b4c]/5 group-hover:bg-[#323b4c]/10 transition-colors" />
-                  <h3 className="text-lg font-semibold mb-5 text-[#323b4c] relative z-10">
+                  <div className="absolute top-6 left-6 w-10 h-10 rounded-xl bg-indigo-500/5 group-hover:bg-indigo-500/10 transition-colors" />
+                  <h3 className="text-lg font-semibold mb-5 text-[#323b4c] dark:text-white relative z-10">
                     {group.title}
                   </h3>
-                  <ul className="space-y-3 text-sm text-gray-600 relative z-10 flex-1">
+                  <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400 relative z-10 flex-1">
                     {group.skills.map((skill) => (
                       <li key={skill} className="flex items-center gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#323b4c] flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 flex-shrink-0" />
                         <span>{skill}</span>
                       </li>
                     ))}

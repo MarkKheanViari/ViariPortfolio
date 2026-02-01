@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) portfolio project for Mark Khean Viari.
+
+## Customization
+
+Add these files to `public/` to complete your portfolio:
+
+- **resume.pdf** - Your resume (Download Resume button)
+- **avatar.jpg** - Your profile photo (About section)
+
+Update `app/data/portfolio.ts` with your social links (GitHub, LinkedIn, Twitter), project URLs, and contact email.
 
 ## Getting Started
 

@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect } from "react";
+import { useTheme } from "../providers/ThemeProvider";
 
 type GradientTitleProps = {
   sectionRef: React.RefObject<HTMLElement | null>;
@@ -10,6 +11,7 @@ type GradientTitleProps = {
 
 export default function GradientTitle({ sectionRef, children }: GradientTitleProps) {
   const progress = useMotionValue(0);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const updateProgress = () => {
@@ -35,7 +37,8 @@ export default function GradientTitle({ sectionRef, children }: GradientTitlePro
   }, [sectionRef, progress]);
 
   const backgroundImage = useTransform(progress, (v) => {
-    return `linear-gradient(90deg, #323b4c 0%, #323b4c ${v * 100}%, #6366f1 ${v * 100}%, #8b5cf6 100%)`;
+    const start = theme === "dark" ? "#94a3b8" : "#323b4c";
+    return `linear-gradient(90deg, ${start} 0%, ${start} ${v * 100}%, #6366f1 ${v * 100}%, #8b5cf6 100%)`;
   });
 
   return (
